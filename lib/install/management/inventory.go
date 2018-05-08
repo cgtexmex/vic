@@ -177,6 +177,7 @@ func (d *Dispatcher) containerRefs(pool *object.ResourcePool) ([]types.ManagedOb
 	if err != nil {
 		return nil, err
 	}
+	d.op.Debugf("Found %d vms", len(vms))
 	// determine which are containers
 	for _, vm := range vms {
 		if d.isContainer(vm) {
